@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>שואס</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>בודק שואס</h1>
+  <input id="codeInput" placeholder="הכנס קוד">
+  <button onclick="check()">בדוק</button>
+  <p id="result">—</p>
+  <button id="loanBtn" onclick="loan()" style="display:none;">הלוואה</button>
+  <script>
+    let balance = 100;
+    const secret = atob("ODM2NDUy"); // "836452"
+
+    function check() {
+      const val = document.getElementById("codeInput").value.trim();
+      const res = document.getElementById("result");
+      const btn = document.getElementById("loanBtn");
+
+      if (val === secret) {
+        res.textContent = "האינסוף שואס שלך.";
+        btn.style.display = "none";
+      } else {
+        balance = 100;
+        res.textContent = balance + " שואס";
+        btn.style.display = "inline-block";
+      }
+    }
+
+    function loan() {
+      balance += 0.1;
+      document.getElementById("result").textContent = balance.toFixed(1) + " שואס";
+    }
+  </script>
+</body>
+</html>
