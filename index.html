@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>שואס</title>
+  <title>דולה דולה</title>
   <style>
     body {
       font-family: sans-serif;
@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-  <h1>בודק שואס</h1>
+  <h1>בודק דולה דולה</h1>
   <input id="codeInput" placeholder="הכנס קוד">
   <button onclick="check()">בדוק</button>
   <p id="result">—</p>
@@ -33,18 +33,18 @@
       const btn = document.getElementById("loanBtn");
 
       if (val === secret) {
-        res.textContent = "האינסוף שואס שלך.";
+        res.textContent = "האינסוף דולה דולה שלך.";
         btn.style.display = "none";
       } else {
         balance = 100;
-        res.textContent = balance + " שואס";
+        res.textContent = balance + " דולה דולה";
         btn.style.display = "inline-block";
       }
     }
 
     function loan() {
       balance += 0.1;
-      document.getElementById("result").textContent = balance.toFixed(1) + " שואס";
+      document.getElementById("result").textContent = balance.toFixed(1) + " דולה דולה";
     }
   </script>
 </body>
